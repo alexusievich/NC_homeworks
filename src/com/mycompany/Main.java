@@ -1,6 +1,7 @@
 package com.mycompany;
 
-import com.mycompany.homework1.*;
+import com.mycompany.hw1.Ball;
+import com.mycompany.hw1.Container;
 
 public class Main {
     public static void main(String[] args) {
