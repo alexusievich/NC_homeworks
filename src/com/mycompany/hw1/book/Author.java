@@ -1,4 +1,4 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.book;
 
 public class Author {
 

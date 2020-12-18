@@ -1,4 +1,6 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.mytriangle;
+
+import com.mycompany.hw1.mypoint.MyPoint;
 
 public class MyTriangle {
 

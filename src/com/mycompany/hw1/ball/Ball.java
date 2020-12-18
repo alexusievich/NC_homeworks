@@ -1,4 +1,4 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.ball;
 
 public class Ball {
     private float x;

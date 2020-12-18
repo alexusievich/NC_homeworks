@@ -1,7 +1,7 @@
 package com.mycompany;
 
-import com.mycompany.hw1.Ball;
-import com.mycompany.hw1.Container;
+import com.mycompany.hw1.ball.Ball;
+import com.mycompany.hw1.ball.Container;
 
 public class Main {
     public static void main(String[] args) {

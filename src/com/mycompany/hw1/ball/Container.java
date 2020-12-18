@@ -1,4 +1,6 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.ball;
+
+import com.mycompany.hw1.ball.Ball;
 
 public class Container {
     private int x1;

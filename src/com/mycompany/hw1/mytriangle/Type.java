@@ -1,4 +1,4 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.mytriangle;
 
 public enum Type {
     firstType("Equilateral"), // равносторонний

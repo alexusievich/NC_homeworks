@@ -1,4 +1,4 @@
-package com.mycompany.hw1;
+package com.mycompany.hw1.employee;
 
 public class Employee {
 
