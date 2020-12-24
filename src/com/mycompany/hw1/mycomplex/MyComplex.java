@@ -1,5 +1,7 @@
 package com.mycompany.hw1.mycomplex;
 
+import java.util.Objects;
+
 public class MyComplex {
 
     private double real = 0.0;
@@ -129,4 +131,17 @@ public class MyComplex {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyComplex)) return false;
+        MyComplex myComplex = (MyComplex) o;
+        return Double.compare(myComplex.getReal(), getReal()) == 0 &&
+                Double.compare(myComplex.getImag(), getImag()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isReal(), getImag());
+    }
 }

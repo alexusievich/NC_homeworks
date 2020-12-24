@@ -1,5 +1,7 @@
 package com.mycompany.hw1.employee;
 
+import java.util.Objects;
+
 public class Employee {
 
     private int id;
@@ -58,5 +60,20 @@ public class Employee {
                 ", name='" + this.getName() + '\'' +
                 ", salary=" + salary +
                 ']';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id &&
+                Objects.equals(getFirstName(), employee.getFirstName()) &&
+                Objects.equals(getLastName(), employee.getLastName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, getFirstName(), getLastName());
     }
 }

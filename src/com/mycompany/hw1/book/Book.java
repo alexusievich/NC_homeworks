@@ -4,6 +4,7 @@ package com.mycompany.hw1.book;
 import com.mycompany.hw1.book.Author;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Book {
 
@@ -68,6 +69,24 @@ public class Book {
             names += a.getName() + ", ";
         }
         return names.substring(0, names.length() - 2);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+        Book book = (Book) o;
+        return Double.compare(book.getPrice(), getPrice()) == 0 &&
+                Objects.equals(getName(), book.getName()) &&
+                Arrays.equals(getAuthors(), book.getAuthors());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getName(), getPrice(), getQty());
+        result = 31 * result + Arrays.hashCode(getAuthors());
+        return result;
     }
 
 }

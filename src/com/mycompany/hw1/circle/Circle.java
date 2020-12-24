@@ -1,5 +1,7 @@
 package com.mycompany.hw1.circle;
 
+import java.util.Objects;
+
 public class Circle {
 
     private double radius = 1.0;
@@ -47,5 +49,19 @@ public class Circle {
 
     public double getArea() {
         return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Circle)) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.getRadius(), getRadius()) == 0 &&
+                Objects.equals(getColor(), circle.getColor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRadius(), getColor());
     }
 }

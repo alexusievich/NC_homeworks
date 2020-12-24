@@ -1,5 +1,7 @@
 package com.mycompany.hw1.mypoint;
 
+import java.util.Objects;
+
 public class MyPoint {
 
     private int x = 0;
@@ -65,4 +67,17 @@ public class MyPoint {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyPoint)) return false;
+        MyPoint myPoint = (MyPoint) o;
+        return getX() == myPoint.getX() &&
+                getY() == myPoint.getY();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
+    }
 }

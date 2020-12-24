@@ -2,6 +2,8 @@ package com.mycompany.hw1.mytriangle;
 
 import com.mycompany.hw1.mypoint.MyPoint;
 
+import java.util.Objects;
+
 public class MyTriangle {
 
     private MyPoint v1;
@@ -58,5 +60,20 @@ public class MyTriangle {
         else {
             return Type.thirdType.getType();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MyTriangle)) return false;
+        MyTriangle that = (MyTriangle) o;
+        return Objects.equals(v1, that.v1) &&
+                Objects.equals(v2, that.v2) &&
+                Objects.equals(v3, that.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(v1, v2, v3);
     }
 }
