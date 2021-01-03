@@ -1,4 +1,4 @@
-package com.mycompany;
+package com.mycompany.hw1;
 
 import com.mycompany.hw1.ball.Ball;
 import com.mycompany.hw1.ball.Container;

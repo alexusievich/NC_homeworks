@@ -31,13 +31,13 @@ public class Main {
         //System.out.println(list.iterator(3).hasNext());
         //System.out.println(list.iterator(3).next());
 
-        list.iterator(0).remove();
+        //list.iterator(0).remove();
 
 
 
         //list.add(3, node6);
         //System.out.println(list.get(1));
-        //System.out.println(list.indexOf(node1));
+        //System.out.println(list.indexOf(node2));
 
         //System.out.println(list.remove(4));
         //list.clear();
@@ -47,7 +47,11 @@ public class Main {
 
         //System.out.println(list.toArray());
 
-        System.out.println(list.toString());
+        //System.out.println(list.toString());
+
+        System.out.println("Compare MyLinkedList and JavaLinkedList:");
+        CompareLinkedLists compareLinkList = new CompareLinkedLists(10000);
+        compareLinkList.compareList();
 
 
     }
