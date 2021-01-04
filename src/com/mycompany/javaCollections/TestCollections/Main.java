@@ -20,20 +20,20 @@ public class Main {
         test.compareRemoveList(50000);
         System.out.println("End:");
         test.compareRemoveListEnd();
-//        System.out.println();
-//        System.out.println("Add for the HashSet, LinkedHashSet, TreeSet");
-//        test.compareAddSet(str);
-//        System.out.println("Contains for the HashSet, LinkedHashSet, TreeSet");
-//        test.compareContainsSet(str);
-//        System.out.println("Remove for the HashSet, LinkedHashSet, TreeSet");
-//        test.compareRemoveSet(str);
-//        System.out.println();
-//        System.out.println("Put for the HashMap, LinkedHashMap, TreeMap");
-//        test.comparePutMap(1,str);
-//        System.out.println("Get for the HashMap, LinkedHashMap, TreeMap");
-//        test.compareGetMap(1);
-//        System.out.println("Put for the HashMap, LinkedHashMap, TreeMap");
-//        test.compareRemoveMap(1);
-//
+        System.out.println();
+        System.out.println("Add for the HashSet, LinkedHashSet, TreeSet");
+        test.compareAddSet(str);
+        System.out.println("Contains for the HashSet, LinkedHashSet, TreeSet");
+        test.compareContainsSet(str);
+        System.out.println("Remove for the HashSet, LinkedHashSet, TreeSet");
+        test.compareRemoveSet(str);
+        System.out.println();
+        System.out.println("Put for the HashMap, LinkedHashMap, TreeMap");
+        test.comparePutMap(1,str);
+        System.out.println("Get for the HashMap, LinkedHashMap, TreeMap");
+        test.compareGetMap(1);
+        System.out.println("Put for the HashMap, LinkedHashMap, TreeMap");
+        test.compareRemoveMap(1);
+
     }
 }
