@@ -1,6 +1,6 @@
 package com.mycompany.HorstmannTasks.InheritReflect;
 
-public class Line extends Shape{
+public class Line extends Shape implements Cloneable{
 
     Point point2;
     Point center;
@@ -15,5 +15,9 @@ public class Line extends Shape{
         center.x = (point2.x - point.x) / 2;
         center.y = (point2.y - point.y) / 2;
         return center;
+    }
+
+    public Line clone() {
+        return (Line) super.clone();
     }
 }

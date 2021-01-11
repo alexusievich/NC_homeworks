@@ -1,6 +1,6 @@
 package com.mycompany.HorstmannTasks.InheritReflect;
 
-public class Circle extends Shape{
+public class Circle extends Shape implements Cloneable{
 
     private double radius;
 
@@ -12,5 +12,9 @@ public class Circle extends Shape{
     @Override
     public Point getCenter() {
         return point;
+    }
+
+    public Circle clone() {
+        return (Circle) super.clone();
     }
 }

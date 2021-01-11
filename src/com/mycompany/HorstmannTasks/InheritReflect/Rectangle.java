@@ -1,6 +1,6 @@
 package com.mycompany.HorstmannTasks.InheritReflect;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Cloneable{
 
     Point center;
     private double width;
@@ -19,5 +19,9 @@ public class Rectangle extends Shape{
         center.x = point.x + dx;
         center.y = point.y + dy;
         return center;
+    }
+
+    public Rectangle clone() {
+        return (Rectangle) super.clone();
     }
 }

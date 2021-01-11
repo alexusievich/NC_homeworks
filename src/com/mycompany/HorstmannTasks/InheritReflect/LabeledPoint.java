@@ -2,7 +2,7 @@ package com.mycompany.HorstmannTasks.InheritReflect;
 
 import java.util.Objects;
 
-public class LabeledPoint extends Point{
+public class LabeledPoint extends Point implements Cloneable{
 
     private String label;
 
@@ -34,5 +34,9 @@ public class LabeledPoint extends Point{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), getLabel());
+    }
+
+    public LabeledPoint clone() {
+        return (LabeledPoint) super.clone();
     }
 }

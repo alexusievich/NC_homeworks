@@ -2,7 +2,7 @@ package com.mycompany.HorstmannTasks.InheritReflect;
 
 import java.util.Objects;
 
-public class Point {
+public class Point implements Cloneable{
 
     protected double x;
     protected double y;
@@ -40,5 +40,14 @@ public class Point {
     @Override
     public int hashCode() {
         return Objects.hash(getX(), getY());
+    }
+
+    public Point clone() {
+        try {
+            return (Point) super.clone();
+        }
+        catch( CloneNotSupportedException ex ) {
+            throw new InternalError();
+        }
     }
 }

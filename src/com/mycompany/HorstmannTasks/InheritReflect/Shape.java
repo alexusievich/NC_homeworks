@@ -1,6 +1,6 @@
 package com.mycompany.HorstmannTasks.InheritReflect;
 
-public abstract class Shape {
+public abstract class Shape implements Cloneable{
 
     Point point = new Point(3,4);
 
@@ -16,5 +16,14 @@ public abstract class Shape {
     }
 
     public abstract Point getCenter();
+
+    public Shape clone() {
+        try {
+            return (Shape) super.clone();
+        }
+        catch( CloneNotSupportedException ex ) {
+            throw new InternalError();
+        }
+    }
 
 }
