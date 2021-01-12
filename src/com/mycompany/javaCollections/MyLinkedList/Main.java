@@ -13,6 +13,7 @@ public class Main {
 
 
         MyLinkedList<Node> list = new MyLinkedList<>(Node.class);
+        LinkedList<Node> list1 = new LinkedList<Node>();
 
         Node<Integer> node6 = new Node<>(3);
         Node<Integer> node5 = new Node<>(6,node6);
@@ -26,6 +27,11 @@ public class Main {
         list.add(node2);
         list.add(node3);
         list.add(node4);
+
+        list1.add(node1);
+        list1.add(node2);
+        list1.add(node3);
+        list1.add(node4);
 
 
         //System.out.println(list.iterator(3).hasNext());
@@ -47,11 +53,19 @@ public class Main {
 
         //System.out.println(list.toArray());
 
-        //System.out.println(list.toString());
+        System.out.println(list.toString());
+        System.out.println(list1.toString());
 
-        System.out.println("Compare MyLinkedList and JavaLinkedList:");
-        CompareLinkedLists compareLinkList = new CompareLinkedLists(10000);
-        compareLinkList.compareList();
+//        System.out.println("Compare MyLinkedList and JavaLinkedList:");
+//        CompareLinkedLists compareLinkList = new CompareLinkedLists(1000000);
+//        compareLinkList.compareList();
+
+
+//        for (Node element: list) {
+//            System.out.println(element);
+//        }
+
+
 
 
     }

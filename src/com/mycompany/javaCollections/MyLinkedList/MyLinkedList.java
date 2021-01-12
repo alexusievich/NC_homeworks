@@ -2,6 +2,7 @@ package com.mycompany.javaCollections.MyLinkedList;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
@@ -55,6 +56,11 @@ public class MyLinkedList<E> implements IMyLinkedList<E> {
 
     @Override
     public void clear() {
+        for (Node<E> x = first; x != null; ) {
+            Node<E> next = x.getNextNode();
+            x.setElement(null);
+            x = next;
+        }
         first = last = null;
         size = 0;
     }
@@ -167,6 +173,13 @@ public class MyLinkedList<E> implements IMyLinkedList<E> {
         return new MyLinkedListIterator<E>(index);
     }
 
+    Node<E> getNode(int index) {
+        Node<E> node = first;
+        for (int i = 0; i < index; i++) {
+            node = node.getNextNode();
+        }
+        return node;
+    }
 
     public String toString() {
         String result = "";
@@ -184,59 +197,67 @@ public class MyLinkedList<E> implements IMyLinkedList<E> {
 
     private class MyLinkedListIterator<E> implements IMyLinkedListIterator<E> {
 
+
+        private Node<E> element;
+        private Node<E> nextElement;
+        private int nextIndex;
         private int iteratorSize;
-        private int index;
 
 
         public MyLinkedListIterator(int index) {
-            this.iteratorSize = size;
-            this.index = index;
+            iteratorSize = size;
+            nextIndex = index;
+            if (iteratorSize == 0) {
+                nextElement = null;
+            } else {
+                nextElement = (Node<E>) getNode(index);
+            }
         }
+
 
         public int getIteratorSize() {
             return iteratorSize;
         }
 
+        public int getNextIndex() {
+            return nextIndex;
+        }
+
         @Override
         public boolean hasNext() {
-            return index < iteratorSize - 1;
+            return nextIndex < iteratorSize;
         }
 
 
         @Override
         public E next() {
             if (hasNext()) {
-                Node<E> cursor = (Node<E>) first;
-                if (index == 0) {
-                    return (E) first.getElement();
-                } else {
-                    for (int i = 0; i < index; i++) {
-                        cursor = cursor.getNextNode();
-                    }
-                    return cursor.getElement();
-                }
-            }
-            else {
+                element = nextElement;
+                nextElement = nextElement.getNextNode();
+                nextIndex++;
+                return element.getElement();
+            } else {
                 throw new NoSuchElementException("The element doesn't has next");
             }
         }
 
         @Override
         public void remove() {
-            if (index < iteratorSize) {
+            if (nextIndex < iteratorSize) {
                 Node<E> cursor = (Node<E>) first;
                 iteratorSize -= 1;
-                if (index == 0) {
+                if (nextIndex == 0) {
                     MyLinkedList.this.remove(0);
                 } else {
-                    MyLinkedList.this.remove(index);
+                    MyLinkedList.this.remove(nextIndex);
                 }
-            }
-            else {
+            } else {
                 throw new IndexOutOfBoundsException("The required element doesn't exist");
             }
         }
+
     }
-
-
 }
+
+
+
