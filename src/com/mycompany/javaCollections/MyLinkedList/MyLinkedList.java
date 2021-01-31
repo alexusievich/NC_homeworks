@@ -1,24 +1,14 @@
 package com.mycompany.javaCollections.MyLinkedList;
 
 import java.lang.reflect.Array;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class MyLinkedList<E> implements IMyLinkedList<E> {
 
     private Node<E> first;
     private Node<E> last;
     private int size;
-    private Class<E> classE;
 
-    public MyLinkedList() {
-    }
-
-    public MyLinkedList(Class<E> ClassE) {
-        this.classE = ClassE;
-    }
 
     @Override
     public void add(E element) {
@@ -154,14 +144,34 @@ public class MyLinkedList<E> implements IMyLinkedList<E> {
 
     @Override
     public E[] toArray() {
-        E[] result = (E[]) Array.newInstance(classE, size);
-        Node<E> cursor = first;
-        for (int i = 0; i < size; i++) {
-            result[i] = cursor.getElement();
-            cursor = cursor.getNextNode();
-        }
-        return result;
+        Object[] result = new Object[size];
+        int i = 0;
+        for (Node<E> x = first; x != null; x = x.getNextNode())
+            result[i++] = x.getElement();
+        return (E[]) result;
     }
+
+//    public E[] toArray2() {
+//        E[] result = new E[size];
+//        int i = 0;
+//        for (Node<E> x = first; x != null; x = x.getNextNode())
+//            result[i++] = x.getElement();
+//        return result;
+//    }
+//
+//
+//    public E[] Array1(E[] a) {
+//        if (a.length < size) {
+//            E[] result = (E[]) Arrays.copyOf(elements, size, a.getClass());
+//            return result;
+//        }
+//        System.arraycopy(elements, 0, a, 0, size);
+//        if (a.length > size) {
+//            a[size] = null;
+//        }
+//        return a;
+//    }
+
 
 
     @Override

@@ -9,7 +9,7 @@ public class CompareLinkedLists {
     }
 
     public void compareList() {
-        MyLinkedList<String> myList = new MyLinkedList<>(String.class);
+        MyLinkedList<String> myList = new MyLinkedList<>();
         LinkedList<String> javaList = new LinkedList<>();
         System.out.println("Add(E):");
         compareAdd(myList, javaList);

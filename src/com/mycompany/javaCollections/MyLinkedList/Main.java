@@ -2,6 +2,7 @@ package com.mycompany.javaCollections.MyLinkedList;
 
 import com.mycompany.hw1.circle.Circle;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -12,8 +13,9 @@ public class Main {
 
 
 
-        MyLinkedList<Node> list = new MyLinkedList<>(Node.class);
+        MyLinkedList<Node> list = new MyLinkedList<>();
         LinkedList<Node> list1 = new LinkedList<Node>();
+
 
         Node<Integer> node6 = new Node<>(3);
         Node<Integer> node5 = new Node<>(6,node6);
@@ -51,7 +53,7 @@ public class Main {
 
         //list.toArray();
 
-        //System.out.println(list.toArray());
+        System.out.println(list.toArray());
 
         System.out.println(list.toString());
         System.out.println(list1.toString());
